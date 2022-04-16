@@ -1,4 +1,4 @@
---For question 1, the return table
+--For question 1, the return table contain 3 rows
 SELECT DISTINCT(F.flight_num) FROM FLIGHTS AS F
 	JOIN WEEKDAYS AS W ON F.day_of_week_id = W.did
 	JOIN CARRIERS AS C ON F.carrier_id = C.cid
