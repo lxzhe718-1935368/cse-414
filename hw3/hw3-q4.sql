@@ -4,5 +4,6 @@ WITH InterFlight AS
 		WHERE f1.origin_city = 'Seattle WA')
 SELECT DISTINCT(f2.dest_city) AS city
 	FROM FLIGHTS AS f2
-		JOIN InterFlight ON f2.origin_city = InterFlight.dc AND f2.dest_city NOT IN InterFlight
+		JOIN InterFlight ON f2.origin_city = InterFlight.dc
+		AND f2.dest_city NOT IN (SELECT dc FROM InterFlight)
 		AND f2.dest_city != 'Seattle WA'
